@@ -1,15 +1,15 @@
 :root {
-  --bg: #081118;
-  --bg-strong: #0d1821;
-  --surface: rgba(14, 24, 33, 0.82);
-  --surface-strong: rgba(18, 31, 42, 0.94);
-  --surface-soft: rgba(11, 20, 28, 0.72);
-  --ink: #edf4f7;
-  --ink-muted: #94a9b8;
-  --line: rgba(166, 199, 216, 0.16);
-  --accent: #2a8f9b;
-  --accent-strong: #0f5662;
-  --shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+  --bg: #070b10;
+  --bg-strong: #0d1319;
+  --surface: rgba(16, 22, 28, 0.84);
+  --surface-strong: rgba(20, 27, 35, 0.94);
+  --surface-soft: rgba(12, 17, 23, 0.74);
+  --ink: #e7edf0;
+  --ink-muted: #8f9ca6;
+  --line: rgba(151, 163, 173, 0.14);
+  --accent: #647784;
+  --accent-strong: #33444f;
+  --shadow: 0 18px 48px rgba(0, 0, 0, 0.24);
   --max-width: 1240px;
   --radius-lg: 34px;
   --radius-md: 22px;
@@ -29,9 +29,9 @@ body {
   min-height: 100vh;
   color: var(--ink);
   background:
-    radial-gradient(circle at top right, rgba(42, 143, 155, 0.16), transparent 24rem),
-    radial-gradient(circle at bottom left, rgba(13, 86, 98, 0.18), transparent 28rem),
-    linear-gradient(180deg, #060d13 0%, var(--bg) 48%, #050b10 100%);
+    radial-gradient(circle at top right, rgba(92, 112, 126, 0.1), transparent 22rem),
+    radial-gradient(circle at bottom left, rgba(52, 68, 79, 0.12), transparent 26rem),
+    linear-gradient(180deg, #05080c 0%, var(--bg) 46%, #04070a 100%);
   font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
   line-height: 1.6;
 }
@@ -77,8 +77,10 @@ a {
   height: 3rem;
   border-radius: 999px;
   color: #f3f7f8;
-  background: linear-gradient(135deg, #12343e, #1d7180);
-  box-shadow: 0 0 0 1px rgba(166, 199, 216, 0.1);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0)),
+    linear-gradient(135deg, #2b3842, #41535f);
+  box-shadow: 0 0 0 1px rgba(151, 163, 173, 0.12);
   font-family: "IBM Plex Mono", monospace;
 }
 
@@ -120,10 +122,10 @@ a {
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background:
-    linear-gradient(90deg, rgba(166, 199, 216, 0.05) 1px, transparent 1px),
-    linear-gradient(rgba(166, 199, 216, 0.035) 1px, transparent 1px),
-    linear-gradient(135deg, rgba(15, 27, 37, 0.98), rgba(7, 14, 20, 0.96));
-  background-size: 32px 32px, 32px 32px, auto;
+    linear-gradient(90deg, rgba(151, 163, 173, 0.028) 1px, transparent 1px),
+    linear-gradient(rgba(151, 163, 173, 0.022) 1px, transparent 1px),
+    linear-gradient(135deg, rgba(15, 20, 26, 0.985), rgba(9, 13, 18, 0.98));
+  background-size: 36px 36px, 36px 36px, auto;
   box-shadow: var(--shadow);
 }
 
@@ -134,14 +136,14 @@ a {
   width: 22rem;
   height: 22rem;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(42, 143, 155, 0.12), transparent 68%);
+  background: radial-gradient(circle, rgba(95, 118, 132, 0.08), transparent 70%);
 }
 
 .hero::before {
   content: "";
   position: absolute;
   inset: 1.25rem;
-  border: 1px solid rgba(166, 199, 216, 0.08);
+  border: 1px solid rgba(151, 163, 173, 0.07);
   border-radius: calc(var(--radius-lg) - 8px);
   pointer-events: none;
 }
@@ -156,7 +158,7 @@ a {
 .stat-label,
 .contact-label {
   margin: 0 0 0.75rem;
-  color: #8ea5b6;
+  color: #8996a0;
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.82rem;
   letter-spacing: 0.12em;
@@ -206,14 +208,150 @@ a {
 
 .button-primary {
   color: #f5f7f7;
-  background: linear-gradient(135deg, #12343e, #216876);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0)),
+    linear-gradient(135deg, #34434d, #4b5d69);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.035),
+    0 10px 24px rgba(0, 0, 0, 0.16);
 }
 
 .button-secondary {
   border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.02);
   color: var(--ink);
+}
+
+.signal-section {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.015), rgba(255, 255, 255, 0.006)),
+    var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.signal-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.28fr) minmax(280px, 0.72fr);
+  gap: 1.3rem;
+  align-items: stretch;
+}
+
+.signal-stage,
+.signal-notes {
+  min-width: 0;
+}
+
+.signal-stage {
+  padding: 1rem;
+  border: 1px solid rgba(151, 163, 173, 0.11);
+  border-radius: 20px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.015), rgba(255, 255, 255, 0.006)),
+    rgba(10, 14, 18, 0.78);
+}
+
+.signal-chart {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.signal-grid line {
+  stroke: rgba(151, 163, 173, 0.07);
+  stroke-width: 1;
+}
+
+.signal-plot-bg {
+  fill: rgba(8, 12, 16, 0.64);
+  stroke: rgba(151, 163, 173, 0.08);
+  stroke-width: 1;
+}
+
+.signal-window {
+  fill: rgba(118, 132, 144, 0.08);
+  stroke: rgba(118, 132, 144, 0.34);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 6;
+}
+
+.signal-axis-label,
+.signal-inline-label {
+  fill: #8d99a3;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.signal-inline-label-soft {
+  fill: #a7b2ba;
+}
+
+.signal-area {
+  fill: rgba(118, 132, 144, 0.045);
+}
+
+.price-line {
+  fill: none;
+  stroke: url(#priceGradient);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.signal-layer-line {
+  fill: none;
+  stroke: url(#signalGradient);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.signal-point {
+  fill: #788894;
+  stroke: rgba(233, 238, 241, 0.78);
+  stroke-width: 2;
+}
+
+.signal-notes {
+  display: grid;
+  gap: 1rem;
+}
+
+.signal-note {
+  padding: 1.25rem 1.35rem;
+  border: 1px solid rgba(151, 163, 173, 0.1);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.018), rgba(255, 255, 255, 0.008)),
+    rgba(11, 16, 21, 0.76);
+}
+
+.signal-note-primary {
+  background:
+    linear-gradient(135deg, rgba(84, 100, 112, 0.16), rgba(11, 16, 21, 0.76)),
+    rgba(11, 16, 21, 0.76);
+}
+
+.signal-note-label {
+  margin: 0;
+  color: #aab5bd;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.signal-note-copy {
+  margin: 0.7rem 0 0;
+  color: var(--ink);
+  line-height: 1.72;
+}
+
+.signal-note-copy strong {
+  color: #f4fafb;
 }
 
 .card,
@@ -247,7 +385,7 @@ a {
 
 .card {
   padding: 1.85rem;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015)), var(--surface);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.008)), var(--surface);
 }
 
 .card h3 {
@@ -264,8 +402,8 @@ a {
 
 .accent-panel {
   background:
-    radial-gradient(circle at top right, rgba(42, 143, 155, 0.12), transparent 18rem),
-    linear-gradient(135deg, rgba(9, 36, 41, 0.98), rgba(11, 60, 68, 0.94)),
+    radial-gradient(circle at top right, rgba(97, 116, 129, 0.08), transparent 18rem),
+    linear-gradient(135deg, rgba(18, 25, 31, 0.98), rgba(26, 36, 44, 0.95)),
     var(--surface);
   color: #f1f5f7;
 }
@@ -295,7 +433,7 @@ a {
   padding: 1.55rem;
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.015)), var(--surface-strong);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.008)), var(--surface-strong);
 }
 
 .contact-grid a {
@@ -377,6 +515,7 @@ a {
     width: min(calc(100% - 1.2rem), var(--max-width));
   }
 
+  .signal-layout,
   .two-column,
   .card-grid,
   .contact-grid {

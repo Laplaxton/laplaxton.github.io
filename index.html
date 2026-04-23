@@ -90,6 +90,100 @@
           </div>
         </section>
 
+        <section class="section signal-section" id="signal">
+          <div class="section-heading">
+            <p class="eyebrow">Signal View</p>
+            <h2>Information asymmetry detection in a stylized oil prediction market.</h2>
+          </div>
+          <div class="signal-layout">
+            <div class="signal-stage" aria-hidden="true">
+              <svg class="signal-chart" viewBox="0 0 860 420" role="img">
+                <defs>
+                  <linearGradient id="priceGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#90a0aa" />
+                    <stop offset="60%" stop-color="#e1e8ec" />
+                    <stop offset="100%" stop-color="#f2f5f7" />
+                  </linearGradient>
+                  <linearGradient id="signalGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#4a5f6d" />
+                    <stop offset="100%" stop-color="#748896" />
+                  </linearGradient>
+                  <clipPath id="plotClip">
+                    <rect x="80" y="75" width="640" height="270" rx="18" />
+                  </clipPath>
+                </defs>
+
+                <rect class="signal-plot-bg" x="80" y="75" width="640" height="270" rx="18" />
+
+                <g class="signal-grid" clip-path="url(#plotClip)">
+                  <line x1="80" y1="60" x2="80" y2="345" />
+                  <line x1="80" y1="345" x2="720" y2="345" />
+                  <line x1="160" y1="75" x2="160" y2="345" />
+                  <line x1="240" y1="75" x2="240" y2="345" />
+                  <line x1="320" y1="75" x2="320" y2="345" />
+                  <line x1="400" y1="75" x2="400" y2="345" />
+                  <line x1="480" y1="75" x2="480" y2="345" />
+                  <line x1="560" y1="75" x2="560" y2="345" />
+                  <line x1="640" y1="75" x2="640" y2="345" />
+                  <line x1="720" y1="75" x2="720" y2="345" />
+                  <line x1="80" y1="105" x2="720" y2="105" />
+                  <line x1="80" y1="165" x2="720" y2="165" />
+                  <line x1="80" y1="225" x2="720" y2="225" />
+                  <line x1="80" y1="285" x2="720" y2="285" />
+                </g>
+
+                <rect class="signal-window" x="438" y="74" width="94" height="272" rx="10" />
+
+                <text class="signal-axis-label" x="82" y="48">WILL WTI OIL REACH 100 BY MARCH?</text>
+                <text class="signal-axis-label" x="82" y="386">MARKET TIME</text>
+
+                <path
+                  class="signal-area"
+                  d="M80 238 L120 214 L156 246 L194 192 L226 205 L260 171 L302 224 L338 146 L370 184 L405 151 L435 188 L470 132 L506 196 L542 143 L578 208 L616 154 L652 223 L688 173 L720 186 L720 345 L80 345 Z"
+                  clip-path="url(#plotClip)"
+                />
+                <path
+                  class="price-line"
+                  d="M80 238 L120 214 L156 246 L194 192 L226 205 L260 171 L302 224 L338 146 L370 184 L405 151 L435 188 L470 132 L506 196 L542 143 L578 208 L616 154 L652 223 L688 173 L720 186"
+                  clip-path="url(#plotClip)"
+                />
+
+                <path
+                  class="signal-layer-line"
+                  d="M80 314 L118 308 L150 311 L184 294 L214 301 L248 282 L286 293 L320 266 L356 273 L390 262 L424 268 L460 236 L494 249 L530 238 L566 250 L602 231 L640 245 L680 236 L720 228"
+                  clip-path="url(#plotClip)"
+                />
+                <circle class="signal-point" cx="484" cy="239" r="6" />
+
+                <text class="signal-inline-label" x="472" y="102">anomaly window</text>
+                <text class="signal-inline-label" x="596" y="257">signal layer</text>
+                <text class="signal-inline-label signal-inline-label-soft" x="612" y="148">probability shift</text>
+              </svg>
+            </div>
+
+            <div class="signal-notes">
+              <article class="signal-note signal-note-primary">
+                <p class="signal-note-label">Information asymmetry detection</p>
+                <p class="signal-note-copy">
+                  Sequential residuals diverge from baseline by <strong>+2.7σ</strong>.
+                </p>
+              </article>
+              <article class="signal-note">
+                <p class="signal-note-label">Anomaly window</p>
+                <p class="signal-note-copy">
+                  Local jump intensity rises to <strong>1.9x</strong> normal regime.
+                </p>
+              </article>
+              <article class="signal-note">
+                <p class="signal-note-label">Probability shift</p>
+                <p class="signal-note-copy">
+                  Posterior probability shifts by <strong>+11.8 pts</strong>.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
         <section class="section accent-panel" id="approach">
           <div class="section-heading">
             <p class="eyebrow">Approach</p>
