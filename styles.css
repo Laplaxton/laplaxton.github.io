@@ -49,7 +49,6 @@ a {
 .site-header,
 .site-footer,
 .hero,
-.stats,
 .section {
   animation: rise 620ms ease both;
 }
@@ -117,7 +116,7 @@ a {
   position: relative;
   overflow: hidden;
   margin-top: 0.8rem;
-  padding: 5.6rem 5.2rem;
+  padding: 5.8rem 5.2rem 4.9rem;
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background:
@@ -131,9 +130,11 @@ a {
 .hero::after {
   content: "";
   position: absolute;
-  inset: 0 auto 0 56%;
-  width: 1px;
-  background: linear-gradient(180deg, transparent, rgba(166, 199, 216, 0.18), transparent);
+  inset: auto -7rem -9rem auto;
+  width: 22rem;
+  height: 22rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(42, 143, 155, 0.12), transparent 68%);
 }
 
 .hero::before {
@@ -145,17 +146,10 @@ a {
   pointer-events: none;
 }
 
-.hero-grid {
+.hero-copy {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(320px, 0.82fr);
-  gap: 3.4rem;
-  align-items: end;
-}
-
-.hero-copy {
-  max-width: 760px;
+  max-width: 980px;
 }
 
 .eyebrow,
@@ -177,14 +171,17 @@ a {
 }
 
 .hero h1 {
-  max-width: 10.2ch;
-  font-size: clamp(3.45rem, 6.2vw, 5.7rem);
-  text-wrap: balance;
+  max-width: none;
+  font-size: clamp(3.55rem, 6.1vw, 5.95rem);
+}
+
+.hero h1 span {
+  display: block;
 }
 
 .lead {
-  max-width: 34rem;
-  margin: 1.9rem 0 0;
+  max-width: 42rem;
+  margin: 2rem 0 0;
   color: var(--ink-muted);
   font-size: 1.08rem;
 }
@@ -194,92 +191,6 @@ a {
   flex-wrap: wrap;
   gap: 0.9rem;
   margin-top: 2.35rem;
-}
-
-.hero-aside {
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 1.35rem;
-  padding: 1.6rem;
-  border: 1px solid rgba(166, 199, 216, 0.14);
-  border-radius: 20px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.015), rgba(255, 255, 255, 0.01));
-  min-height: 100%;
-}
-
-.hero-aside-label {
-  margin: 0;
-  color: #b4c4cf;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.hero-terminal {
-  display: grid;
-  gap: 0;
-  border: 1px solid rgba(166, 199, 216, 0.12);
-  border-radius: 16px;
-  background: rgba(4, 9, 13, 0.42);
-  overflow: hidden;
-}
-
-.hero-terminal p {
-  margin: 0;
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.95rem 1rem;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.82rem;
-  border-top: 1px solid rgba(166, 199, 216, 0.09);
-}
-
-.hero-terminal p:first-child {
-  border-top: 0;
-}
-
-.hero-terminal span {
-  color: #7d93a3;
-  text-transform: lowercase;
-}
-
-.hero-terminal strong {
-  color: #e6eff3;
-  font-weight: 500;
-  text-align: right;
-  max-width: 17ch;
-}
-
-.hero-metrics {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.85rem;
-  margin: 0;
-}
-
-.hero-metrics div {
-  padding-top: 0.95rem;
-  border-top: 1px solid rgba(166, 199, 216, 0.12);
-}
-
-.hero-metrics dt {
-  margin: 0;
-  color: var(--ink-muted);
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.hero-metrics dd {
-  margin: 0.35rem 0 0;
-  color: var(--ink);
-  font-size: 1.02rem;
-  font-weight: 600;
 }
 
 .button {
@@ -305,14 +216,6 @@ a {
   color: var(--ink);
 }
 
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.15rem;
-  margin-top: 1.25rem;
-}
-
-.stats article,
 .card,
 .accent-panel,
 .contact-panel {
@@ -323,22 +226,13 @@ a {
   box-shadow: var(--shadow);
 }
 
-.stats article {
-  padding: 1.7rem 1.6rem;
-}
-
-.stats strong {
-  display: block;
-  font-size: 1.1rem;
-}
-
 .section {
-  margin-top: 1.25rem;
+  margin-top: 1.45rem;
   padding: 3rem;
 }
 
 .section-heading {
-  max-width: 52rem;
+  max-width: none;
 }
 
 .section-heading + * {
@@ -382,12 +276,12 @@ a {
 }
 
 .accent-panel h2 {
-  max-width: 14ch;
+  max-width: 22ch;
 }
 
 .two-column {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
   gap: 2.25rem;
 }
 
@@ -483,11 +377,9 @@ a {
     width: min(calc(100% - 1.2rem), var(--max-width));
   }
 
-  .hero-grid,
   .two-column,
   .card-grid,
-  .contact-grid,
-  .stats {
+  .contact-grid {
     grid-template-columns: 1fr;
   }
 
@@ -508,10 +400,6 @@ a {
 
   .section {
     padding: 1.65rem;
-  }
-
-  .hero-aside {
-    min-height: 0;
   }
 
   .brand-name {
