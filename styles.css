@@ -9,7 +9,6 @@
   --line: rgba(166, 199, 216, 0.16);
   --accent: #2a8f9b;
   --accent-strong: #0f5662;
-  --accent-warm: #d6ab63;
   --shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
   --max-width: 1240px;
   --radius-lg: 34px;
@@ -30,9 +29,8 @@ body {
   min-height: 100vh;
   color: var(--ink);
   background:
-    radial-gradient(circle at top right, rgba(42, 143, 155, 0.22), transparent 24rem),
-    radial-gradient(circle at 20% 20%, rgba(214, 171, 99, 0.08), transparent 18rem),
-    radial-gradient(circle at bottom left, rgba(13, 86, 98, 0.26), transparent 30rem),
+    radial-gradient(circle at top right, rgba(42, 143, 155, 0.16), transparent 24rem),
+    radial-gradient(circle at bottom left, rgba(13, 86, 98, 0.18), transparent 28rem),
     linear-gradient(180deg, #060d13 0%, var(--bg) 48%, #050b10 100%);
   font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
   line-height: 1.6;
@@ -80,10 +78,8 @@ a {
   height: 3rem;
   border-radius: 999px;
   color: #f3f7f8;
-  background:
-    linear-gradient(135deg, rgba(214, 171, 99, 0.18), transparent 60%),
-    linear-gradient(135deg, var(--accent-strong), var(--accent));
-  box-shadow: 0 0 0 1px rgba(214, 171, 99, 0.1);
+  background: linear-gradient(135deg, #12343e, #1d7180);
+  box-shadow: 0 0 0 1px rgba(166, 199, 216, 0.1);
   font-family: "IBM Plex Mono", monospace;
 }
 
@@ -98,7 +94,10 @@ a {
   flex-wrap: wrap;
   gap: 1.8rem;
   color: var(--ink-muted);
-  font-size: 1.05rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .site-nav a {
@@ -122,38 +121,36 @@ a {
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background:
-    radial-gradient(circle at top left, rgba(42, 143, 155, 0.16), transparent 22rem),
-    linear-gradient(135deg, rgba(19, 35, 46, 0.96), rgba(11, 20, 28, 0.94)),
-    linear-gradient(120deg, rgba(15, 90, 100, 0.14), transparent 55%);
+    linear-gradient(90deg, rgba(166, 199, 216, 0.05) 1px, transparent 1px),
+    linear-gradient(rgba(166, 199, 216, 0.035) 1px, transparent 1px),
+    linear-gradient(135deg, rgba(15, 27, 37, 0.98), rgba(7, 14, 20, 0.96));
+  background-size: 32px 32px, 32px 32px, auto;
   box-shadow: var(--shadow);
 }
 
 .hero::after {
   content: "";
   position: absolute;
-  inset: -5rem -5rem auto auto;
-  width: 22rem;
-  height: 22rem;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(42, 143, 155, 0.18), transparent 66%);
+  inset: 0 auto 0 56%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(166, 199, 216, 0.18), transparent);
 }
 
 .hero::before {
   content: "";
   position: absolute;
-  inset: auto auto -9rem 32%;
-  width: 28rem;
-  height: 28rem;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(214, 171, 99, 0.06), transparent 70%);
+  inset: 1.25rem;
+  border: 1px solid rgba(166, 199, 216, 0.08);
+  border-radius: calc(var(--radius-lg) - 8px);
+  pointer-events: none;
 }
 
 .hero-grid {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(300px, 0.9fr);
-  gap: 3rem;
+  grid-template-columns: minmax(0, 1.55fr) minmax(320px, 0.82fr);
+  gap: 3.4rem;
   align-items: end;
 }
 
@@ -180,16 +177,16 @@ a {
 }
 
 .hero h1 {
-  max-width: 8.9ch;
-  font-size: clamp(3.7rem, 7vw, 6.6rem);
+  max-width: 10.2ch;
+  font-size: clamp(3.45rem, 6.2vw, 5.7rem);
   text-wrap: balance;
 }
 
 .lead {
-  max-width: 40rem;
+  max-width: 34rem;
   margin: 1.9rem 0 0;
   color: var(--ink-muted);
-  font-size: 1.14rem;
+  font-size: 1.08rem;
 }
 
 .hero-actions {
@@ -203,69 +200,64 @@ a {
   align-self: stretch;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 1.6rem;
-  padding: 1.8rem;
-  border: 1px solid rgba(166, 199, 216, 0.12);
-  border-radius: 26px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent),
-    linear-gradient(180deg, rgba(7, 14, 19, 0.22), rgba(7, 14, 19, 0.12));
+  justify-content: flex-start;
+  gap: 1.35rem;
+  padding: 1.6rem;
+  border: 1px solid rgba(166, 199, 216, 0.14);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.015), rgba(255, 255, 255, 0.01));
   min-height: 100%;
 }
 
 .hero-aside-label {
   margin: 0;
-  color: var(--accent-warm);
+  color: #b4c4cf;
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.78rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
-.hero-aside-copy {
-  margin: 0;
-  max-width: 28ch;
-  color: #dbe5ec;
-  font-size: 1.02rem;
-  line-height: 1.72;
-}
-
-.hero-pulse {
-  position: relative;
+.hero-terminal {
   display: grid;
-  place-items: center;
-  min-height: 10rem;
-  padding: 0.5rem 0;
+  gap: 0;
+  border: 1px solid rgba(166, 199, 216, 0.12);
+  border-radius: 16px;
+  background: rgba(4, 9, 13, 0.42);
+  overflow: hidden;
 }
 
-.hero-pulse span {
-  position: absolute;
-  border-radius: 999px;
-  border: 1px solid rgba(42, 143, 155, 0.32);
+.hero-terminal p {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.95rem 1rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.82rem;
+  border-top: 1px solid rgba(166, 199, 216, 0.09);
 }
 
-.hero-pulse span:nth-child(1) {
-  width: 4.5rem;
-  height: 4.5rem;
-  background: radial-gradient(circle, rgba(214, 171, 99, 0.3), rgba(42, 143, 155, 0.16) 60%, transparent 76%);
+.hero-terminal p:first-child {
+  border-top: 0;
 }
 
-.hero-pulse span:nth-child(2) {
-  width: 9.6rem;
-  height: 9.6rem;
+.hero-terminal span {
+  color: #7d93a3;
+  text-transform: lowercase;
 }
 
-.hero-pulse span:nth-child(3) {
-  width: 14.2rem;
-  height: 14.2rem;
-  border-color: rgba(214, 171, 99, 0.16);
+.hero-terminal strong {
+  color: #e6eff3;
+  font-weight: 500;
+  text-align: right;
+  max-width: 17ch;
 }
 
 .hero-metrics {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 0.85rem;
   margin: 0;
 }
 
@@ -303,7 +295,7 @@ a {
 
 .button-primary {
   color: #f5f7f7;
-  background: linear-gradient(135deg, var(--accent-strong), var(--accent));
+  background: linear-gradient(135deg, #12343e, #216876);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
 }
 
@@ -378,7 +370,7 @@ a {
 
 .accent-panel {
   background:
-    radial-gradient(circle at top right, rgba(214, 171, 99, 0.14), transparent 18rem),
+    radial-gradient(circle at top right, rgba(42, 143, 155, 0.12), transparent 18rem),
     linear-gradient(135deg, rgba(9, 36, 41, 0.98), rgba(11, 60, 68, 0.94)),
     var(--surface);
   color: #f1f5f7;
@@ -520,10 +512,6 @@ a {
 
   .hero-aside {
     min-height: 0;
-  }
-
-  .hero-pulse {
-    min-height: 7rem;
   }
 
   .brand-name {
